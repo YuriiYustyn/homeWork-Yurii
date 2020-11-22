@@ -1,6 +1,6 @@
 //отримує будь-яке число та виводить найбільшу цифру в цьому числі
-const findMax = (n) => +Math.max(...(n + '').split(''));
-console.log(findMax(5826));
+const findMax = (number) => +Math.max(...(number + '').split(''));
+console.log(findMax(456544));
 
 //визначає ступінь числа
 function leadsDegree(x, y) {
@@ -46,21 +46,23 @@ let counter = 0;
 console.log(countLetter("Аcталавіста", "а"));
 
 //конвертує долари в гривні та навпаки
-function conversion(sum, currency) {
+function conversion(sum) {
    const exchangeRate = 25;
    let result;
-   if (currency === '$') {
-      result = +sum * exchangeRate;
+   if (sum.slice(-3) === 'UAH' || sum.slice(-3) === 'Uah' || sum.slice(-3) === 'uah') {
+      result = +(sum.slice(0, -3) / exchangeRate);
    }
-   else if (currency === 'UAH' || currency === 'Uah' || currency === 'uah'){
-      result = +sum / exchangeRate;
+   else if (sum.slice(-1) === '$') {
+      result = exchangeRate * (sum.slice(0, -1))
    }
    else {
       result = 'error, не коректна валюта'
    }
    return result;
 }
-console.log(conversion(2560, 'uah'));
+
+
+console.log(conversion('2000$'))
 
 //генерації випадкового паролю(тільки числа)
 function getRandomPaswword(length = 8) {
@@ -88,9 +90,9 @@ console.log(deleteLetters('what is yor name', 'a'));
 
 //перевіряє, чи є слово паліндромом
 function isPapindrom(string) {
-   const delet = deleteLetters(string, " ").toLowerCase();
-   const reverse = delet.split('').reverse().join('');
-   return (delet=== reverse);
+   const removesGaps = deleteLetters(string, " ").toLowerCase();
+   const reverse = removesGaps.split('').reverse().join('');
+   return (removesGaps=== reverse);
 }
 console.log(isPapindrom('я несу гусеня'));
 
@@ -108,13 +110,13 @@ function removesDuplication(string) {
 console.log(removesDuplication('Бісквіт був дуже ніжним'))
 
 document.writeln(`
-<div>Функція №1:  ${findMax(5826)}</div>
+<div>Функція №1:  ${findMax(45612524)}</div>
 <div>Функція №2:  ${leadsDegree(5, 6)}</div>
 <div>Функція №3:  ${editingName("юРІй")}</div>
 <div>Функція №4:  ${сalculateNetto(14580)}</div>
 <div>Функція №5:  ${ pickRandomNumber(4, 12)}</div>
 <div>Функція №6:  ${countLetter("Аcталавіста", "а")}</div>
-<div>Функція №7:  ${conversion(2560, 'uah')}</div>
+<div>Функція №7:  ${conversion('2560uah')}</div>
 <div>Функція №8:  ${getRandomPaswword(length = 8)}</div>
 <div>Функція №9:  ${deleteLetters('what is yor name', 'a')}</div>
 <div>Функція №10: ${isPapindrom('я несу гусеня')}</div>
