@@ -22,21 +22,21 @@ const students = [{
       english: [5, 3],
       cosmology: [5, 5, 5, 5]
    }
-   }];
+   }]
 
    //повертає список предметів для конкретного студента
 function getSubjects(student) {
-   const allSubjects = Object.keys(student.subjects);
-   let editedSubjects = new Array;
-   const substitute = '_';
+   const allSubjects = Object.keys(student.subjects)
+   let editedSubjects = new Array
+   const substitute = '_'
    allSubjects.forEach((subject) => {
       editedSubjects.push(subject.slice(0, 1).toUpperCase() +
          ((subject.slice(1).toLowerCase()).replace(substitute, " "))) 
          
-   });
-   return editedSubjects;
+   })
+   return editedSubjects
 }
-console.log(getSubjects(students[2]));
+console.log(getSubjects(students[2]))
 
 //поверне середню оцінку по усім предметам
 function getAverageMark(student) {
@@ -65,11 +65,11 @@ function getStudentsNames(students) {
       return student.name
    }).sort()
 }
-console.log(getStudentsNames(students));
+console.log(getStudentsNames(students))
 
 //повертає кращого студента 
 function getBestStudent(students) {
-   studentMark = [];
+   studentMark = []
    students.forEach((nam) => studentMark.push({ [nam.name]: getAverageMark(nam) }) )
    studentMark.sort((a, b) =>Object.values(b) - Object.values(a) )
    return Object.keys(studentMark[0])
@@ -80,11 +80,9 @@ console.log(getBestStudent(students))
 function calculateWordLetters (text) {
 const substitute = text.replace(/\s/g, '')
 let newText =substitute.toLowerCase().split('')
-   let object = {};
+   let object = {}
    newText.forEach((item) => {
-      if (object[item] != undefined)
-         ++object[item];
-      else object[item] = 1;
+      object[item] != undefined ? ++object[item]:object[item] = 1
    })
    return object
 }
