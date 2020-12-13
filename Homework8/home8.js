@@ -15,9 +15,9 @@ class Student  {
       //if (this.dismiss) return null
       return this.dismiss?this.marks = [5, 4, 4, 5,]:this.marks = null
    }
-   set setMarks(o) {
+   set setMarks(newMark) {
       if (this.dismiss === true)
-      return this.marks.push(o)
+      return this.marks.push(newMark)
    }
    getAverageMark() {
       let sum = this.marks.reduce((acum, item) => {
