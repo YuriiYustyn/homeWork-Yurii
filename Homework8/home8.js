@@ -3,7 +3,7 @@ class Student  {
       this.university = university,
       this.course = course,
       this.fullName = fullName,
-      this.marks=[],
+      this.marks = [5, 4, 4, 5],
       this.dismiss = true,
       this.recover = true  
    }
@@ -13,7 +13,7 @@ class Student  {
    }
    get getMarks() {
       //if (this.dismiss) return null
-      return this.dismiss?this.marks = [5, 4, 4, 5,]:this.marks = null
+      return this.dismiss?this.marks: null
    }
    set setMarks(newMark) {
       if (this.dismiss === true)
@@ -26,10 +26,10 @@ class Student  {
       return sum/this.marks.length
    }
    getDismiss() {
-      return this.marks = null,this.dismiss = false
+      return this.dismiss = false
    }
    getRecover =(()=> {
-      return this.dismiss = true,this.marks = this.getMarks
+      return this.dismiss = true
    })
 }
 //////////////////   Завдання 1
@@ -51,12 +51,13 @@ console.log(yurii.marks)
 console.log(yurii.getAverageMark())
 
 ///////////////      Завдання 6
-yurii.getDismiss()
-console.log(yurii.marks,yurii.dismiss)
-
+console.log(yurii.getDismiss())
+console.log(yurii.getMarks)
 ///////////////      Завдання 7 
 yurii.getRecover()
-console.log(yurii.marks,yurii.dismiss)
+yurii.getMarks
+console.log(yurii.marks)
+
 
 
 console.log("////////////////////////////////////////ADWANCED///////////////////////////////////////////////////////////////////////")
