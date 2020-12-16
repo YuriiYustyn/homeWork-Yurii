@@ -24,19 +24,8 @@ const students = [{
    }
    }]
 
-   //повертає список предметів для конкретного студента
-function getSubjects(student) {
-   const allSubjects = Object.keys(student.subjects)
-   let editedSubjects = new Array
-   const substitute = '_'
-   allSubjects.forEach((subject) => {
-      editedSubjects.push(subject.slice(0, 1).toUpperCase() +
-         ((subject.slice(1).toLowerCase()).replace(substitute, " "))) 
-         
-   })
-   return editedSubjects
-}
-console.log(getSubjects(students[2]))
+const allSubjects = Object.keys(students[2].subjects).map((el) => el.slice(0, 1).toUpperCase() + (el.slice(1).toLowerCase()).replace('_', " "))
+console.log(allSubjects)
 
 //поверне середню оцінку по усім предметам
 function getAverageMark(student) {
