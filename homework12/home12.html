@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+   <title>Робота з сервером</title>
+   <link rel="stylesheet" href="home12.css">
+
+</head>
+
+<body>
+   <header>STAR WARS </header>
+   <h2>persons</h2>
+   <form id="show-people">
+      <select id="film">
+         <option selected value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+      </select>
+      <button type="submit">Show</button>
+   </form>
+   <table id="people-table">
+      <tr class="people-table-row">
+         <td class="people-table-cell">Full name</td>
+         <td class="people-table-cell">Birth year</td>
+         <td class="people-table-cell">Gender</td>
+      </tr>
+   </table>
+   <h2>PLANETS</h2>
+   <form id="planets-page">
+      <button id="previous" type="submit">Previous page</button>
+      <button id="next" type="submit">Next page</button>
+   </form>
+   <table id="planets-table"></table>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="home12.js"></script>
+</body>
+</html>
