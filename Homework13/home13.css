@@ -1,0 +1,15 @@
+body{
+   background-image: url(wer.gif);
+  	background-color: rgb(72, 99, 41);
+}
+#size{
+   color:rgb(219, 235, 0);
+   border: solid rgb(60, 66, 53);
+   background-color:rgb(46, 70, 20);
+}
+.a{color: rgb(43, 16, 28);
+font-family: Arial Black
+}
+h1{color: rgb(43, 16, 28);
+   font-family: Arial Black
+}
