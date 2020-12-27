@@ -9,7 +9,7 @@ class Student  {
    }
    
    getInfo() {
-      console.log( `Студент ${this.course}го курсу навчається у ${this.university}, ${this.fullName}`)
+      return`Студент ${this.course}го курсу навчається у ${this.university}, ${this.fullName}`
    }
    get getMarks() {
       //if (this.dismiss) return null
@@ -37,7 +37,7 @@ const yurii = new Student("ТНЕУ м.Тернопіль", 2, "Yustyn Yurii")
 console.log(yurii)
 
 /////////////////    Завдання 2
-yurii.getInfo()
+console.log(yurii.getInfo())
 
 ////////////////     Завдання 3 
 yurii.getMarks
